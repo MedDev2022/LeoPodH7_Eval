@@ -1,0 +1,33 @@
+C:\ST\STM32CubeIDE_1.18.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344\tools\arm-none-eabi\include\c++\13.3.1\arm-none-eabi\thumb\v7e-m+fp\hard\bits\gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
+../Core/Src/KX134.cpp:21:1:KX134::KX134()	16	static
+../Core/Src/KX134.cpp:24:6:void KX134::init()	16	static
+../Core/Src/KX134.cpp:40:6:void KX134::initSPI()	40	static
+../Core/Src/KX134.cpp:101:6:void KX134::writeRegisterOneByte(Register, uint8_t, uint8_t*)	40	static
+../Core/Src/KX134.cpp:107:6:bool KX134::reset()	16	static
+../Core/Src/KX134.cpp:123:6:void KX134::deselect()	16	static
+../Core/Src/KX134.cpp:128:6:void KX134::select()	16	static
+../Core/Src/KX134.cpp:133:6:void KX134::setGLimitThreshold(uint8_t)	16	static
+../Core/Src/KX134.cpp:138:6:bool KX134::enableTapEngine(bool)	24	static
+../Core/Src/KX134.cpp:154:6:void KX134::enableInterrupt()	24	static
+../Core/Src/KX134.cpp:219:6:void KX134::disableInterrupt()	16	static
+../Core/Src/KX134.cpp:223:6:void KX134::configureInterrupt()	16	static
+../Core/Src/KX134.cpp:227:9:int16_t KX134::convertTo16BitValue(uint8_t, uint8_t)	24	static
+../Core/Src/KX134.cpp:236:7:float KX134::convertRawToGravs(int16_t)	16	static
+../Core/Src/KX134.cpp:264:6:bool KX134::gDetect()	24	static
+../Core/Src/KX134.cpp:281:6:bool KX134::resetInt()	16	static
+../Core/Src/KX134.cpp:287:6:bool KX134::tapDetected()	24	static
+../Core/Src/KX134.cpp:302:6:void KX134::getAccelerations(int16_t*)	32	static
+../Core/Src/KX134.cpp:313:6:void KX134::setAccelRange(Range)	24	static
+../Core/Src/KX134.cpp:333:6:void KX134::setOutputDataRateBytes(uint8_t)	24	static
+../Core/Src/KX134.cpp:351:6:bool KX134::checkExistence()	24	static
+../Core/Src/KX134.cpp:374:6:void KX134::writeRegister(Register, uint8_t*, uint8_t*, int)	40	static
+../Core/Src/KX134.cpp:386:9:int16_t KX134::readAxis(uint8_t, uint8_t)	16	static
+../Core/Src/KX134.cpp:391:9:int16_t KX134::readX()	24	static
+../Core/Src/KX134.cpp:399:9:int16_t KX134::readY()	24	static
+../Core/Src/KX134.cpp:405:9:int16_t KX134::readZ()	24	static
+../Core/Src/KX134.cpp:410:9:uint8_t KX134::readRegisterOneByte(Register)	24	static
+../Core/Src/KX134.cpp:417:6:void KX134::readRegister(Register, uint8_t*, int)	64	dynamic
+../Core/Src/KX134.cpp:428:6:void KX134::setOutputDataRateHz(uint32_t)	40	static
+../Core/Src/KX134.cpp:441:6:void KX134::enableRegisterWriting()	24	static
+../Core/Src/KX134.cpp:454:6:void KX134::disableRegisterWriting()	24	static
+../Core/Src/KX134.cpp:471:6:bool KX134::dataReady()	24	static
