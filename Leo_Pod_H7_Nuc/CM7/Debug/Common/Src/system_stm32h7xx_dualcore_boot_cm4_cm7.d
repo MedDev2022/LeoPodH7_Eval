@@ -1,5 +1,5 @@
 Common/Src/system_stm32h7xx_dualcore_boot_cm4_cm7.o: \
- C:/Users/krinm/STM32CubeIDE/LEO_POD_PCB/Leo_Pod_H7_Nuc/Common/Src/system_stm32h7xx_dualcore_boot_cm4_cm7.c \
+ C:/Users/krinm/git/LEO_H7_Eval/Leo_Pod_H7_Nuc/Common/Src/system_stm32h7xx_dualcore_boot_cm4_cm7.c \
  C:/Users/krinm/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.1/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h \
  C:/Users/krinm/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.1/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h755xx.h \
  C:/Users/krinm/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.1/Drivers/CMSIS/Include/core_cm7.h \

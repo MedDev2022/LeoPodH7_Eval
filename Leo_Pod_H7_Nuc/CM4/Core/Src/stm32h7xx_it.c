@@ -114,10 +114,6 @@ void HardFault_Handler(void)
     /* USER CODE END W1_HardFault_IRQn 0 */
   }
 }
-void hard_fault_handler_c(uint32_t* stack) {
-    printf("HardFault! PC=0x%08lx\n", stack[6]);
-    while (1);
-}
 
 /**
   * @brief This function handles Memory management fault.
