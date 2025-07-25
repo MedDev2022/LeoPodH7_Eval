@@ -1,5 +1,0 @@
-C:/Users/krinm/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.1/Utilities/ResourcesManager/res_mgr.c:120:18:ResMgr_Init	9
-C:/Users/krinm/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.1/Utilities/ResourcesManager/res_mgr.c:187:17:ResMgr_DeInit	4
-C:/Users/krinm/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.1/Utilities/ResourcesManager/res_mgr.c:228:18:ResMgr_Request	14
-C:/Users/krinm/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.1/Utilities/ResourcesManager/res_mgr.c:333:18:ResMgr_Release	7
-C:/Users/krinm/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.1/Utilities/ResourcesManager/res_mgr.c:382:18:ResMgr_GetResContext	3
