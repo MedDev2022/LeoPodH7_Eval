@@ -1,6 +1,0 @@
-../Core/Src/STSx.cpp:9:1:STS4x::STS4x(I2C_HandleTypeDef*, uint8_t)	24	static
-../Core/Src/STSx.cpp:12:6:bool STS4x::init()	16	static
-../Core/Src/STSx.cpp:16:6:bool STS4x::softReset()	16	static
-../Core/Src/STSx.cpp:20:6:bool STS4x::readTemperature(float&)	24	static
-../Core/Src/STSx.cpp:35:6:bool STS4x::writeCommand(uint16_t)	32	static
-../Core/Src/STSx.cpp:40:6:bool STS4x::readData(uint8_t*, uint16_t)	32	static
