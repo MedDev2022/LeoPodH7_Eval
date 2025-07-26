@@ -40,7 +40,7 @@ uint8_t rxByte;
 // 🚀 Application entry point called from StartDefaultTask
 extern "C" void cpp_app_main(void)
 {
-    printf("🔧 cpp_app_main started\n");
+    printf("cpp_app_main started\n");
 
     // Create a new task
     const osThreadAttr_t myTask_attributes = {
@@ -51,9 +51,9 @@ extern "C" void cpp_app_main(void)
 
     osThreadId_t myTaskHandle = osThreadNew(MyTaskFunction, nullptr, &myTask_attributes);
     if (myTaskHandle == nullptr) {
-        printf("❌ Failed to create MyTaskFunction\n");
+        printf("Failed to create MyTaskFunction\n");
     } else {
-        printf("✅ MyTaskFunction created successfully\n");
+        printf("MyTaskFunction created successfully\n");
     }
 
     // You can return here — or sleep forever if this is the main task
@@ -69,7 +69,7 @@ extern  void MyTaskFunction(void *argument)
 //	LRX20A* lrx20A = new LRX20A(&huart1);
 
 //   IRay iRay(&huart1);
-    client.Init();
+	client.Init();
 //   iRay.Init();
 
 
@@ -85,68 +85,11 @@ extern  void MyTaskFunction(void *argument)
 
     for (;;)
     {
-    //    printf("📣 Hello from MyTaskFunction!\r\n");
+        printf("Hello from MyTaskFunction!\r\n");
         HAL_GPIO_TogglePin(USER_LED2_GPIO_Port, USER_LED2_Pin);  // Optional
         osDelay(1000);  // delay 1 second
     }
 }
 
-//
-//extern "C" void cpp_app_main(void) {
-//
-//    //client = new Client(&huart3);
-//
-//	Client client(&huart3);
-//
-// //   IRay iRay(&huart1);
-//    client.Init();
-//
-////    iRay.Init();
-//
-//    return;
-//
-//
-//////	HAL_NVIC_DisableIRQ(USART3_IRQn);
-////
-////	uint8_t buffer[20]={0};
-////
-////	printf("🔧 Before Client instance Free heap: %u bytes\n", xPortGetFreeHeapSize());
-//// Client clientDevice(USART3, 115200);
-////
-//// clientDevice.begin();
-//// //Client* clientDevice = new Client(USART3, 115200);
-////
-//// printf("🔧 Ufter Client Instance Free heap: %u bytes\n", xPortGetFreeHeapSize());
-////
-//// //   HAL_NVIC_EnableIRQ(USART3_IRQn);
-////
-//////	printf("📡 About to StartReceive... huart=%p\n", clientDevice.GetHalHandle(USART3));
-//////	clientDevice->StartReceive(&clientDevice->rxByte, 1);
-////	printf("✅ StartReceive returned\n");
-////
-//////    clientDevice->Connect(uartHalMap[USART3]);
-//// //   clientDevice->StartReceive(&clientDevice->rxByte, 1);
-//////	HAL_UART_Receive_IT(&huart3, buffer, 10) == HAL_OK;
-////
-//////	 HAL_UART_Receive_IT(&huart3, buffer, 1) ;
-//
-//	  for(;;)
-//	  {
-//		 // printf("🔧 Free heap: %u bytes\n", xPortGetFreeHeapSize());
-//	    HAL_GPIO_TogglePin(USER_LED2_GPIO_Port, USER_LED2_Pin);
-//	    osDelay(1000);
-//
-//	  }
-//}
-//
-//// Forward UART ISR callbacks to base class
-////extern "C" void HAL_UART_RxCpltCallback(UART_HandleTypeDef* huart) {
-////	 Client::ISR_RxCallback(huart);
-////}
-//
-////extern "C" void HAL_UART_TxCpltCallback(UART_HandleTypeDef* huart) {
-////    __NOP();
-////	UartEndpoint::HAL_UART_TxCallback(huart);
-////}
 
 
