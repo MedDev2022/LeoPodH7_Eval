@@ -32,6 +32,10 @@ extern "C" {
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+extern UART_HandleTypeDef huart1;
+extern UART_HandleTypeDef huart2;
+extern UART_HandleTypeDef huart3;
+
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -61,6 +65,14 @@ void Error_Handler(void);
 #define MCU_LED_1_GPIO_Port GPIOC
 #define MCU_LED_2_Pin GPIO_PIN_1
 #define MCU_LED_2_GPIO_Port GPIOC
+#define MCU_2_LSR_TXD_Pin GPIO_PIN_2
+#define MCU_2_LSR_TXD_GPIO_Port GPIOA
+#define MCU_2_LSR_RXD_Pin GPIO_PIN_3
+#define MCU_2_LSR_RXD_GPIO_Port GPIOA
+#define MCU_2_DAYCAM_TXD_Pin GPIO_PIN_10
+#define MCU_2_DAYCAM_TXD_GPIO_Port GPIOB
+#define MCU_2_DAYCAM_RXD_Pin GPIO_PIN_11
+#define MCU_2_DAYCAM_RXD_GPIO_Port GPIOB
 #define MCU_2_HOST_TXD_Pin GPIO_PIN_9
 #define MCU_2_HOST_TXD_GPIO_Port GPIOA
 #define MCU_2_HOST_RXD_Pin GPIO_PIN_10
