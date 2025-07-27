@@ -20,6 +20,7 @@ C_SRCS += \
 ../Core/Src/main.c \
 ../Core/Src/resmgr_utility.c \
 ../Core/Src/stm32h7xx_hal_msp.c \
+../Core/Src/stm32h7xx_hal_timebase_tim.c \
 ../Core/Src/stm32h7xx_it.c \
 ../Core/Src/syscalls.c \
 ../Core/Src/sysmem.c 
@@ -29,6 +30,7 @@ C_DEPS += \
 ./Core/Src/main.d \
 ./Core/Src/resmgr_utility.d \
 ./Core/Src/stm32h7xx_hal_msp.d \
+./Core/Src/stm32h7xx_hal_timebase_tim.d \
 ./Core/Src/stm32h7xx_it.d \
 ./Core/Src/syscalls.d \
 ./Core/Src/sysmem.d 
@@ -47,6 +49,7 @@ OBJS += \
 ./Core/Src/resmgr_utility.o \
 ./Core/Src/stm32_uart_freertos.o \
 ./Core/Src/stm32h7xx_hal_msp.o \
+./Core/Src/stm32h7xx_hal_timebase_tim.o \
 ./Core/Src/stm32h7xx_it.o \
 ./Core/Src/syscalls.o \
 ./Core/Src/sysmem.o 
@@ -72,7 +75,7 @@ Core/Src/%.o Core/Src/%.su Core/Src/%.cyclo: ../Core/Src/%.c Core/Src/subdir.mk
 clean: clean-Core-2f-Src
 
 clean-Core-2f-Src:
-	-$(RM) ./Core/Src/Client.cyclo ./Core/Src/Client.d ./Core/Src/Client.o ./Core/Src/Client.su ./Core/Src/DayCam.cyclo ./Core/Src/DayCam.d ./Core/Src/DayCam.o ./Core/Src/DayCam.su ./Core/Src/LRX20A.cyclo ./Core/Src/LRX20A.d ./Core/Src/LRX20A.o ./Core/Src/LRX20A.su ./Core/Src/LeoPodManager.cyclo ./Core/Src/LeoPodManager.d ./Core/Src/LeoPodManager.o ./Core/Src/LeoPodManager.su ./Core/Src/TempSens.cyclo ./Core/Src/TempSens.d ./Core/Src/TempSens.o ./Core/Src/TempSens.su ./Core/Src/UartEndpoint.cyclo ./Core/Src/UartEndpoint.d ./Core/Src/UartEndpoint.o ./Core/Src/UartEndpoint.su ./Core/Src/comm.cyclo ./Core/Src/comm.d ./Core/Src/comm.o ./Core/Src/comm.su ./Core/Src/freertos.cyclo ./Core/Src/freertos.d ./Core/Src/freertos.o ./Core/Src/freertos.su ./Core/Src/iRay.cyclo ./Core/Src/iRay.d ./Core/Src/iRay.o ./Core/Src/iRay.su ./Core/Src/main.cyclo ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/resmgr_utility.cyclo ./Core/Src/resmgr_utility.d ./Core/Src/resmgr_utility.o ./Core/Src/resmgr_utility.su ./Core/Src/stm32_uart_freertos.cyclo ./Core/Src/stm32_uart_freertos.d ./Core/Src/stm32_uart_freertos.o ./Core/Src/stm32_uart_freertos.su ./Core/Src/stm32h7xx_hal_msp.cyclo ./Core/Src/stm32h7xx_hal_msp.d ./Core/Src/stm32h7xx_hal_msp.o ./Core/Src/stm32h7xx_hal_msp.su ./Core/Src/stm32h7xx_it.cyclo ./Core/Src/stm32h7xx_it.d ./Core/Src/stm32h7xx_it.o ./Core/Src/stm32h7xx_it.su ./Core/Src/syscalls.cyclo ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.cyclo ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su
+	-$(RM) ./Core/Src/Client.cyclo ./Core/Src/Client.d ./Core/Src/Client.o ./Core/Src/Client.su ./Core/Src/DayCam.cyclo ./Core/Src/DayCam.d ./Core/Src/DayCam.o ./Core/Src/DayCam.su ./Core/Src/LRX20A.cyclo ./Core/Src/LRX20A.d ./Core/Src/LRX20A.o ./Core/Src/LRX20A.su ./Core/Src/LeoPodManager.cyclo ./Core/Src/LeoPodManager.d ./Core/Src/LeoPodManager.o ./Core/Src/LeoPodManager.su ./Core/Src/TempSens.cyclo ./Core/Src/TempSens.d ./Core/Src/TempSens.o ./Core/Src/TempSens.su ./Core/Src/UartEndpoint.cyclo ./Core/Src/UartEndpoint.d ./Core/Src/UartEndpoint.o ./Core/Src/UartEndpoint.su ./Core/Src/comm.cyclo ./Core/Src/comm.d ./Core/Src/comm.o ./Core/Src/comm.su ./Core/Src/freertos.cyclo ./Core/Src/freertos.d ./Core/Src/freertos.o ./Core/Src/freertos.su ./Core/Src/iRay.cyclo ./Core/Src/iRay.d ./Core/Src/iRay.o ./Core/Src/iRay.su ./Core/Src/main.cyclo ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/resmgr_utility.cyclo ./Core/Src/resmgr_utility.d ./Core/Src/resmgr_utility.o ./Core/Src/resmgr_utility.su ./Core/Src/stm32_uart_freertos.cyclo ./Core/Src/stm32_uart_freertos.d ./Core/Src/stm32_uart_freertos.o ./Core/Src/stm32_uart_freertos.su ./Core/Src/stm32h7xx_hal_msp.cyclo ./Core/Src/stm32h7xx_hal_msp.d ./Core/Src/stm32h7xx_hal_msp.o ./Core/Src/stm32h7xx_hal_msp.su ./Core/Src/stm32h7xx_hal_timebase_tim.cyclo ./Core/Src/stm32h7xx_hal_timebase_tim.d ./Core/Src/stm32h7xx_hal_timebase_tim.o ./Core/Src/stm32h7xx_hal_timebase_tim.su ./Core/Src/stm32h7xx_it.cyclo ./Core/Src/stm32h7xx_it.d ./Core/Src/stm32h7xx_it.o ./Core/Src/stm32h7xx_it.su ./Core/Src/syscalls.cyclo ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.cyclo ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su
 
 .PHONY: clean-Core-2f-Src
 
