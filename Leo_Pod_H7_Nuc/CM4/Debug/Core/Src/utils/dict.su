@@ -1,0 +1,6 @@
+../Core/Src/utils/dict.c:13:5:dict_find_index	24	static
+../Core/Src/utils/dict.c:22:5:dict_find	32	static
+../Core/Src/utils/dict.c:27:6:dict_add	40	static
+../Core/Src/utils/dict.c:42:8:dict_new	32	static
+../Core/Src/utils/dict.c:49:6:dict_free	24	static
+../Core/Src/utils/dict.c:57:6:dict_print	24	static

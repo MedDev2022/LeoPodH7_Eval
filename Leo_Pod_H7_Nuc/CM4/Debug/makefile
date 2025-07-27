@@ -88,8 +88,8 @@ all: main-build
 main-build: Leo_Pod_H7_Nuc_CM4.elf secondary-outputs
 
 # Tool invocations
-Leo_Pod_H7_Nuc_CM4.elf Leo_Pod_H7_Nuc_CM4.map: $(OBJS) $(USER_OBJS) C:\Users\krinm\git\LEO_H7_Eval\Leo_Pod_H7_Nuc\CM4\STM32H755ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "Leo_Pod_H7_Nuc_CM4.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\krinm\git\LEO_H7_Eval\Leo_Pod_H7_Nuc\CM4\STM32H755ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Leo_Pod_H7_Nuc_CM4.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Leo_Pod_H7_Nuc_CM4.elf Leo_Pod_H7_Nuc_CM4.map: $(OBJS) $(USER_OBJS) C:\Users\krinm\git\LeoPodH7_Eval\Leo_Pod_H7_Nuc\CM4\STM32H755ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-g++ -o "Leo_Pod_H7_Nuc_CM4.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\krinm\git\LeoPodH7_Eval\Leo_Pod_H7_Nuc\CM4\STM32H755ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Leo_Pod_H7_Nuc_CM4.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

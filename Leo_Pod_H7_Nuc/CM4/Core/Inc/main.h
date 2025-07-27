@@ -65,6 +65,8 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define USER_LED3_Pin GPIO_PIN_14
+#define USER_LED3_GPIO_Port GPIOB
 #define BTN_FOCUS_NEAR_Pin GPIO_PIN_6
 #define BTN_FOCUS_NEAR_GPIO_Port GPIOC
 #define BTN_FOCUS_FAR_Pin GPIO_PIN_7
