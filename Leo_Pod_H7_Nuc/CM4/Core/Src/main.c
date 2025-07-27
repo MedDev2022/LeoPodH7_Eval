@@ -427,7 +427,7 @@ void StartDefaultTask(void *argument)
   for(;;)
   {
     HAL_GPIO_TogglePin(USER_LED3_GPIO_Port, USER_LED3_Pin);
-    osDelay(2000);
+    osDelay(100);
 
   }
   /* USER CODE END 5 */

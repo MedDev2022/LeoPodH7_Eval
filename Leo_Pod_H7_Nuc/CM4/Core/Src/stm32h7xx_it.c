@@ -89,22 +89,22 @@ void HardFault_Handler(void)
 {
   /* USER CODE BEGIN HardFault_IRQn 0 */
 
-    __asm volatile (
-        "TST lr, #4 \n"
-        "ITE EQ \n"
-        "MRSEQ r0, MSP \n"
-        "MRSNE r0, PSP \n"
-        "B hard_fault_handler_c \n"
-    );
-
-	    uint32_t hfsr = SCB->HFSR;
-	    uint32_t cfsr = SCB->CFSR;
-	    uint32_t mmfar = SCB->MMFAR;
-	    uint32_t bfar = SCB->BFAR;
-
-	    printf(" HardFault! HFSR=0x%08lx CFSR=0x%08lx MMFAR=0x%08lx BFAR=0x%08lx\n",
-	           hfsr, cfsr, mmfar, bfar);
-	    while (1);
+//    __asm volatile (
+//        "TST lr, #4 \n"
+//        "ITE EQ \n"
+//        "MRSEQ r0, MSP \n"
+//        "MRSNE r0, PSP \n"
+//        "B hard_fault_handler_c \n"
+//    );
+//
+//	    uint32_t hfsr = SCB->HFSR;
+//	    uint32_t cfsr = SCB->CFSR;
+//	    uint32_t mmfar = SCB->MMFAR;
+//	    uint32_t bfar = SCB->BFAR;
+//
+//	    printf(" HardFault! HFSR=0x%08lx CFSR=0x%08lx MMFAR=0x%08lx BFAR=0x%08lx\n",
+//	           hfsr, cfsr, mmfar, bfar);
+//	    while (1);
 
 
   /* USER CODE END HardFault_IRQn 0 */
