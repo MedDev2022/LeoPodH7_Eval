@@ -15,8 +15,6 @@
 "./Core/Src/stm32h7xx_it.o"
 "./Core/Src/syscalls.o"
 "./Core/Src/sysmem.o"
-"./Core/Src/utils/Utils.o"
-"./Core/Src/utils/dict.o"
 "./Core/Startup/startup_stm32h755zitx.o"
 "./Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal.o"
 "./Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_cortex.o"

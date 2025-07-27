@@ -137,8 +137,7 @@ HAL_HSEM_Release(HSEM_ID_0,0);
   while (1)
   {
     /* USER CODE END WHILE */
-	    HAL_GPIO_TogglePin(USER_LED1_GPIO_Port, USER_LED1_Pin);
-	    HAL_Delay(200);
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

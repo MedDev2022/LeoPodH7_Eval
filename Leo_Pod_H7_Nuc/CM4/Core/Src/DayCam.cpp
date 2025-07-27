@@ -76,7 +76,7 @@ void DayCam::handleZoomIn(uint8_t* speed, uint8_t length){
 	memcpy(temp_buff,zoom_teleVar,sizeof(zoom_teleVar));
 
 	if (speed[0] > 0 && speed[0] < 8)
-		temp_buff [4] = (temp_buff [4] & 0xF0 | (speed[0] & 0x0f));
+		temp_buff [4] = ((temp_buff [4] & 0xF0) | (speed[0] & 0x0f));
 	else
 		return;
 
@@ -91,7 +91,7 @@ void DayCam::handleZoomOut(uint8_t* speed, uint8_t length){
 	memcpy(temp_buff,zoom_wideVar,sizeof(zoom_teleVar));
 
 	if (speed[0] > 0 && speed[0] < 8)
-		temp_buff [4] = (temp_buff [4] & 0xF0 | (speed[0] & 0x0f));
+		temp_buff [4] = ((temp_buff [4] & 0xF0) | (speed[0] & 0x0f));
 	else
 		return;
 
@@ -129,7 +129,7 @@ void DayCam::handleFocusFar(uint8_t* speed, uint8_t length){
 	memcpy(temp_buff,focus_farVar,sizeof(focus_farVar));
 
 	if (speed[0] > 0 && speed[0] < 8)
-		temp_buff [4] = (temp_buff [4] & 0xF0 | (speed[0] & 0x0f));
+		temp_buff [4] = ((temp_buff [4] & 0xF0) | (speed[0] & 0x0f));
 	else
 		return;
 
@@ -144,7 +144,7 @@ void DayCam::handleFocusNear(uint8_t* speed, uint8_t length){
 	memcpy(temp_buff,focus_nearVar,sizeof(focus_nearVar));
 
 	if (speed[0] > 0 && speed[0] < 8)
-		temp_buff [4] = (temp_buff [4] & 0xF0 | (speed[0] & 0x0f));
+		temp_buff [4] = ((temp_buff [4] & 0xF0) | (speed[0] & 0x0f));
 	else
 		return;
 

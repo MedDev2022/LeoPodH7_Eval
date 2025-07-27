@@ -10,15 +10,10 @@ Client::Client(UART_HandleTypeDef* huart)
 void Client::Init() {
 //    static uint8_t byte;
     if (!StartReceive(&byte_, 1)) {
-        printf("❌ StartReceive failed\n");
+        printf("StartReceive failed\n");
     }
-    else printf("❌ StartReceive success\n");
+    else printf("StartReceive success\n");
 }
-
-//void Client::onReceiveByte(uint8_t byte) {
-//    printf("📥 Received byte: 0x%02X\n", byte);
-//    StartReceive(&byte_, 1);  // Re-arm
-//}
 
 void Client::onReceiveByte(uint8_t byte) {
     const TickType_t now = xTaskGetTickCount();
@@ -70,46 +65,6 @@ void Client::resetReception() {
     firstByteTick_ = 0;
 }
 
-//void Client::processIncoming() {
-//
-//	enum class State { WAIT_HEADER, WAIT_PAYLOAD };
-//	State state = State::WAIT_HEADER;
-//
-//    while (!rxQueue_.empty()) {
-//        uint8_t byte = rxQueue_.front();
-//
-//        if (byte == 0x55)
-//        {
-//        	uint16_t j = 0;
-//        	for (uint16_t i = rxQueue_.size(); i < 0 ; i--)
-//        	rxMsg[j] = rxQueue_.front();
-//        	rxQueue_.pop_front();
-//        	j++;
-//
-//        }
-//
-//                // Example: parse line-terminated message
-//                if (byte == '\n') {
-//                    printf("Client received: ");
-//                    for (uint8_t c : rxMsg)
-//                        printf("%c", c);
-//                    printf("\r\n");
-//
-////        rxQueue_.pop_front();
-////        message_.push_back(byte);
-////
-////        // Example: parse line-terminated message
-////        if (byte == '\n') {
-////            printf("Client received: ");
-////            for (uint8_t c : message_)
-////                printf("%c", c);
-////            printf("\r\n");
-////
-////            message_.clear();  // ready for next message
-//        }
-//    }
-//}
-
 void Client::processIncoming() {
     // Example logic (depending on your architecture)
     while (!rxQueue_.empty()) {
@@ -120,10 +75,10 @@ void Client::processIncoming() {
 }
 
 void Client::parseAndProcess(uint8_t* msg, size_t len) {
-    uint8_t srcID = msg[1];
-    uint8_t destID = msg[2];
+ //   uint8_t srcID = msg[1];
+//    uint8_t destID = msg[2];
     uint8_t opCode = msg[3];
-    uint8_t addr   = msg[4];
+//    uint8_t addr   = msg[4];
     uint8_t length = msg[5];
     uint8_t* payload = &msg[6];
 

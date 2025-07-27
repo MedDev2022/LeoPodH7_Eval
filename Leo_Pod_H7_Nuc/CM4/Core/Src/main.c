@@ -401,6 +401,16 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+void cpp_app_main(void);
+
+#ifdef __cplusplus
+}
+#endif
+
 /* USER CODE END 4 */
 
 /* USER CODE BEGIN Header_StartDefaultTask */
