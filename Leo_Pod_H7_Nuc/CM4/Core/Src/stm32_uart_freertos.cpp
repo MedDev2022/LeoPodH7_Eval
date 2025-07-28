@@ -40,7 +40,7 @@ uint8_t rxByte;
 // 🚀 Application entry point called from StartDefaultTask
 extern "C" void cpp_app_main(void)
 {
-    printf("🔧 cpp_app_main started\n");
+    printf("cpp_app_main started\n");
 
     // Create a new task
     const osThreadAttr_t myTask_attributes = {
@@ -51,9 +51,9 @@ extern "C" void cpp_app_main(void)
 
     osThreadId_t myTaskHandle = osThreadNew(MyTaskFunction, nullptr, &myTask_attributes);
     if (myTaskHandle == nullptr) {
-        printf("❌ Failed to create MyTaskFunction\n");
+        printf("Failed to create MyTaskFunction\n");
     } else {
-        printf("✅ MyTaskFunction created successfully\n");
+        printf("MyTaskFunction created successfully\n");
     }
 
     // You can return here — or sleep forever if this is the main task
@@ -85,7 +85,7 @@ extern  void MyTaskFunction(void *argument)
 
     for (;;)
     {
-    //    printf("📣 Hello from MyTaskFunction!\r\n");
+    //    printf("Hello from MyTaskFunction!\r\n");
         HAL_GPIO_TogglePin(USER_LED2_GPIO_Port, USER_LED2_Pin);  // Optional
         osDelay(1000);  // delay 1 second
     }

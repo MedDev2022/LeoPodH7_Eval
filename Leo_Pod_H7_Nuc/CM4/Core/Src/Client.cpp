@@ -4,44 +4,61 @@
 #include "DayCam.hpp"  // Include the actual DayCam class
 #include "LRX20A.hpp"
 
+
 Client::Client(UART_HandleTypeDef* huart)
     : UartEndpoint(huart) {}
 
+
 void Client::Init() {
 //    static uint8_t byte;
+
+
+
     if (!StartReceive(&byte_, 1)) {
         printf("StartReceive failed\n");
+
+
     }
-    else printf("StartReceive success\n");
+    else {
+    	printf("StartReceive success\n");
+        rxState_ = RxState::Ready;
+    }
 }
 
-void Client::onReceiveByte(uint8_t byte) {
-    const TickType_t now = xTaskGetTickCount();
 
+
+void Client::onReceiveByte(uint8_t byte) {
+	const TickType_t now = xTaskGetTickCount();
+
+	switch (rxState_)
+	{
+
+	case RxState::Ready:
     // Start of new message
-    if (!receiving_) {
         if (byte == 0xAA) { // Assume HEADER
             buffer_[0] = byte;
             bufferIndex_ = 1;
             firstByteTick_ = now;
-            receiving_ = true;
+            rxState_ = RxState::Receiving;
         }
-        return;
-    }
+     break;
 
-    // Timeout check
-    if ((now - firstByteTick_) > pdMS_TO_TICKS(500)) {
-        resetReception();  // Clear buffer, reset flags
-        printf("Timeout/r/n");
-        return;
-    }
+	case RxState::Receiving:
+
+		// Timeout check
+		if ((now - firstByteTick_) > pdMS_TO_TICKS(500)) {
+			resetReception();  // Clear buffer, reset flags
+			printf("Timeout/r/n");
+			break;
+		}
+
 
     // Accumulate byte
     if (bufferIndex_ < sizeof(buffer_)) {
         buffer_[bufferIndex_++] = byte;
     } else {
         resetReception();
-        return;
+        break;
     }
 
     // Wait until we have at least length
@@ -57,11 +74,21 @@ void Client::onReceiveByte(uint8_t byte) {
         }
         resetReception();
     }
+    break;
+
+
+	case RxState::Stopped:
+
+	// Ignore all incoming data
+	break;
+	}
+
 }
 
 void Client::resetReception() {
     bufferIndex_ = 0;
     receiving_ = false;
+    rxState_ = RxState::Ready;
     firstByteTick_ = 0;
 }
 
